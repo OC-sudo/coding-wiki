@@ -2,6 +2,7 @@
 layout: page
 title: Coding Fundamental
 ---
+
 # Semantic Versioning 
 (语义化版本 | セマンティックバージョニング)
 ## Summary
@@ -11,14 +12,18 @@ MAJOR version when you make incompatible API changes,
 MINOR version when you add functionality in a backwards compatible manner, and
 PATCH version when you make backwards compatible bug fixes.
 Additional labels for pre-release and build metadata are available as extensions to the MAJOR.MINOR.PATCH format.
-- - -
+
+---
+
 版本格式：主版本号.次版本号.修订号，版本号递增规则如下：
 
 主版本号：当你做了不兼容的API 修改。
 次版本号：当你做了向下兼容的功能性新增。
 修订号：当你做了向下兼容的问题修正。
 先行版本号及版本编译信息可以加到“主版本号.次版本号.修订号”的后面，作为延伸。
-- - -
+
+---
+
 バージョンナンバーは、メジャー.マイナー.パッチ とし、バージョンを上げるには、
 
 APIの変更に互換性のない場合はメジャーバージョンを、
@@ -27,9 +32,11 @@ APIの変更に互換性のない場合はメジャーバージョンを、
 　プレリリースやビルドナンバーなどのラベルに関しては、メジャー.マイナー.パッチ の形式を拡張する形で利用することができます。
 
 
-- - -
+---
+
 ## Introduction
-- - -
+
+---
 In the world of software management there exists a dreaded place called “dependency hell.” The bigger your system grows and the more packages you integrate into your software, the more likely you are to find yourself, one day, in this pit of despair.
 
 In systems with many dependencies, releasing new package versions can quickly become a nightmare. If the dependency specifications are too tight, you are in danger of version lock (the inability to upgrade a package without having to release new versions of every dependent package). If dependencies are specified too loosely, you will inevitably be bitten by version promiscuity (assuming compatibility with more future versions than is reasonable). Dependency hell is where you are when version lock and/or version promiscuity prevent you from easily and safely moving your project forward.
@@ -37,7 +44,9 @@ In systems with many dependencies, releasing new package versions can quickly be
 As a solution to this problem, I propose a simple set of rules and requirements that dictate how version numbers are assigned and incremented. These rules are based on but not necessarily limited to pre-existing widespread common practices in use in both closed and open-source software. For this system to work, you first need to declare a public API. This may consist of documentation or be enforced by the code itself. Regardless, it is important that this API be clear and precise. Once you identify your public API, you communicate changes to it with specific increments to your version number. Consider a version format of X.Y.Z (Major.Minor.Patch). Bug fixes not affecting the API increment the patch version, backwards compatible API additions/changes increment the minor version, and backwards incompatible API changes increment the major version.
 
 I call this system “Semantic Versioning.” Under this scheme, version numbers and the way they change convey meaning about the underlying code and what has been modified from one version to the next.
-- - -
+
+---
+
 在软件管理的领域里存在着被称作“依赖地狱”的死亡之谷，系统规模越大，加入的套件越多，你就越有可能在未来的某一天发现自己已深陷绝望之中。
 
 在依赖高的系统中发布新版本套件可能很快会成为恶梦。如果依赖关系过高，可能面临版本控制被锁死的风险（必须对每一个相依套件改版才能完成某次升级）。而如果依赖关系过于松散，又将无法避免版本的混乱（假设兼容于未来的多个版本已超出了合理数量）。当你专案的进展因为版本相依被锁死或版本混乱变得不够简便和可靠，就意味着你正处于依赖地狱之中。
@@ -45,7 +54,9 @@ I call this system “Semantic Versioning.” Under this scheme, version numbers
 作为这个问题的解决方案之一，我提议用一组简单的规则及条件来约束版本号的配置和增长。这些规则是根据（但不局限于）已经被各种封闭、开放源码软件所广泛使用的惯例所设计。为了让这套理论运作，你必须先有定义好的公共API。这可以透过文件定义或代码强制要求来实现。无论如何，这套API 的清楚明了是十分重要的。一旦你定义了公共API，你就可以透过修改相应的版本号来向大家说明你的修改。考虑使用这样的版本号格式：XYZ （主版本号.次版本号.修订号）修复问题但不影响API 时，递增修订号；API 保持向下兼容的新增及修改时，递增次版本号；进行不向下兼容的修改时，递增主版本号。
 
 我称这套系统为“语义化的版本控制”，在这套约定下，版本号及其更新方式包含了相邻版本间的底层代码和修改内容的信息。
-- - -
+
+---
+
 　ソフトウェア・マネージメントの世界には、「依存性地獄」と呼ばれる恐ろしいものがあります。あなたのシステムが大きく成長すればするほど、さまざまなパッケージを組み込めば組み込むほど、自分が地獄の底にいることにいつか気づくでしょう。
 
 　多くの依存性を有しているシステムにとって、新しいバージョンがリリースされることは悪夢でしかありません。厳密に依存関係を指定してしまうと、システムはバージョン・ロック（すべての依存パッケージを新しくしない限り、アップグレードできないこと）の危機にさらされてしまいます。反対に、依存指定を緩く管理しすぎると、バージョンが複雑に絡まり合い、痛い目にあうことは避けられないでしょう（合理性よりも将来のバージョンとの互換性を気にすることになる）。依存性地獄とは、あなたのプロジェクトでバージョン・ロックまたはバージョン混乱に陥ることで、プロジェクトに支障をきたすことを指します。
@@ -53,9 +64,11 @@ I call this system “Semantic Versioning.” Under this scheme, version numbers
 　この問題の解決策として、私はシンプルなルールセットとバージョン・ナンバーをどのように割り当て、バージョンを上げていくのかについての要件を提案します。これらのルールは既存のクローズドまたはオープンソースプロジェクトで普及している一般的な（必ずしもそうであるとは限りませんが）プラクティスをもとに作られています。このシステムを利用するために、まずはパブリックなAPIを宣言する必要があります。これはドキュメントに記載しても、コード自体で表現しても構いません。とにかく、APIが明確かつ正確であることは非常に重要です。パブリックなAPIを宣言したら、それを変更する際にはルールに従ってバージョン番号を上げなければなりません。つまり、X.Y.Z（メジャー.マイナー.パッチ）のバージョン形式を遵守しなければなりません。APIに影響を及ぼさないバグ修正はパッチバージョンを、後方互換性を保ちつつAPIを変更・追加した場合はマイナーバージョンを、後方互換性のないAPIの変更はメジャーバージョンを上げます。
 
 　私はこのシステムを『セマンティック バージョニング』と呼び、このスキームに従えば、あるバージョンのコードが次のバージョンへの変更された際に何が変更されたのかユーザーに伝えることができます。
-- - -
-## Semantic Versioning Specification (SemVer)
 
+---
+
+## Semantic Versioning Specification (SemVer)
+### English
 The key words “MUST”, “MUST NOT”, “REQUIRED”, “SHALL”, “SHALL NOT”, “SHOULD”, “SHOULD NOT”, “RECOMMENDED”, “MAY”, and “OPTIONAL” in this document are to be interpreted as described in RFC 2119.
 
 1. Software using Semantic Versioning MUST declare a public API. This API could be declared in the code itself or exist strictly in documentation. However it is done, it SHOULD be precise and comprehensive.
@@ -90,21 +103,37 @@ Identifiers with letters or hyphens are compared lexically in ASCII sort order.
 Numeric identifiers always have lower precedence than non-numeric identifiers.
 A larger set of pre-release fields has a higher precedence than a smaller set, if all of the preceding identifiers are equal.
 Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0.
-- - -
+
+---
+
+### 中文
 以下关键词MUST、MUST NOT、REQUIRED、SHALL、SHALL NOT、SHOULD、SHOULD NOT、 RECOMMENDED、MAY、OPTIONAL 依照RFC 2119 的叙述解读。（译注：为了保持语句顺畅， 以下文件遇到的关键词将依照整句语义进行翻译，在此先不进行个别翻译。）
 
 1. 使用语义化版本控制的软件“必须MUST”定义公共API。该API可以在代码中被定义或出现于严谨的文件内。无论何种形式都应该力求精确且完整。
+
 2. 标准的版本号“必须MUST”采用XYZ的格式，​​ 其中X、Y和Z为非负的整数，且“禁止MUST NOT”在数字前方补零。X是主版本号、Y是次版本号、而Z为修订号。每个元素“必须MUST”以数值来递增。例如：1.9.1 -> 1.10.0 -> 1.11.0。
+
 3. 标记版本号的软件发行后，“禁止MUST NOT”改变该版本软件的内容。任何修改都“必须MUST”以新版本发行。
+
 4. 主版本号为零（0.yz）的软件处于开发初始阶段，一切都可能随时被改变。这样的公共API 不应该被视为稳定版。
+
 5. 1.0.0 的版本号用于界定公共API 的形成。这一版本之后所有的版本号更新都基于公共API 及其修改内容。
+
 6. 修订号Z（xyZ | x > 0）“必须MUST”在只做了向下兼容的修正时才递增。这里的修正指的是针对不正确结果而进行的内部修改。
+
 7. 次版本号Y（xYz | x > 0）“必须MUST”在有向下兼容的新功能出现时递增。在任何公共API的功能被标记为弃用时也“必须MUST”递增。也“可以MAY”在内部程序有大量新功能或改进被加入时递增，其中“可以MAY”包括修订级别的改变。每当次版本号递增时，修订号“必须MUST”归零。
+
 8. 主版本号X（Xyz | X > 0）“必须MUST”在有任何不兼容的修改被加入公共API时递增。其中“可以MAY”包括次版本号及修订级别的改变。每当主版本号递增时，次版本号和修订号“必须MUST”归零。
+
 9. 先行版本号“可以MAY”被标注在修订版之后，先加上一个连接号再加上一连串以句点分隔的标识符号来修饰。标识符号“必须MUST”由ASCII码的英数字和连接号[0-9A-Za-z-]组成，且“禁止MUST NOT”留白。数字型的标识符号“禁止MUST NOT”在前方补零。先行版的优先级低于相关联的标准版本。被标上先行版本号则表示这个版本并非稳定而且可能无法达到兼容的需求。范例：1.0​​.0-alpha、1.0.0-alpha.1、 1.0.0-0.3.7、1.0.0-x.7.z.92。
+
 10. 版本编译信息“可以MAY”被标注在修订版或先行版本号之后，先加上一个加号再加上一连串以句点分隔的标识符号来修饰。标识符号“必须MUST”由ASCII的英数字和连接号[0-9A-Za-z-]组成，且“禁止MUST NOT”留白。当判断版本的优先层级时，版本编译信息“可SHOULD”被忽略。因此当两个版本只有在版本编译信息有差别时，属于相同的优先层级。范例：1.0.0-alpha+001、1.0.0+20130313144700、 1.0.0-beta+exp.sha.5114f85。
+
 11. 版本的优先层级指的是不同版本在排序时如何比较。判断优先层级时，“必须MUST”把版本依序拆分为主版本号、次版本号、修订号及先行版本号后进行比较（版本编译信息不在这份比较的列表中）。由左到右依序比较每个标识符号，第一个差异值用来决定优先层级：主版本号、次版本号及修订号以数值比较，例如1.0.0 < 2.0.0 < 2.1.0 < 2.1.1。当主版本号、次版本号及修订号都相同时，改以优先层级比较低的先行版本号决定。例如：1.0.0-alpha < 1.0.0。有相同主版本号、次版本号及修订号的两个先行版本号，其优先层级“必须MUST”透过由左到右的每个被句点分隔的标识符号来比较，直到找到一个差异值后决定：只有数字的标识符号以数值高低比较，有字母或连接号时则逐字以ASCII的排序来比较。数字的标识符号比非数字的标识符号优先层级低。若开头的标识符号都相同时，栏 ​​位比较多的先行版本号优先层级比较高。范例：1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 10.0-beta.2 < 1.0.0-beta.11 < 1.0.0- rc.1 < 1.0.0。
-- - -
+
+---
+
+### 日本語
 この文書における各キーワード「しなければならない（MUST）」、「してはならない（MUST NOT）」、「要求されている（REQUIRED）」、「することになる（SHALL）」、「することはない（SHALL NOT）」、「する必要がある（SHOULD）」、「しないほうがよい（SHOULD NOT）」、「推奨される（RECOMMENDED）」、「してもよい（MAY）」、「選択できる（OPTIONAL）」は、RFC 2119に記載されている内容に従い解釈してください。
 
 1. セマンティック バージョニングを適用するソフトウェアはパブリックAPIを宣言しなければなりません（MUST）。このAPIはコード自体で表現されているかもしれませんし、明確に文書として存在してるかもしれません。どちらにせよ、正確かつ漏れがないようにするべきです（SHOULD）。
@@ -128,7 +157,9 @@ Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-bet
 10. ビルドメタデータはパッチまたはプレリリースバージョンの直後にプラス記号とドットで区切られた識別子を追加することで表現してもよいです（MAY）。識別子は必ずASCII英数字とハイフン [0-9A-Za-z-] でなければなりません（MUST）。識別子は空であってはなりません（MUST NOT）。バージョンの優先度を決める際にはビルドメタデータは無視されなければなりません（MUST）。つまり、2つのビルドメタデータだけが違うバージョンは、同じ優先度ということです。例：1.0.0-alpha+001, 1.0.0+20130313144700, 1.0.0-beta+exp.sha.5114f85。
 
 11. バージョン同士をどのように比較するのかは優先度によって決まります。優先度はメジャー、マイナー、パッチ、プレリリース識別子の順番（ビルドメタデータは優先度に関して考慮しない）で分けて評価されなければなりません（MUST）。優先度は、各識別子を左から右に比較して最初の違いによって評価します。以下のように、メジャー、マイナー、パッチバージョンと常に数値的に比較します。例：1.0.0 < 2.0.0 < 2.1.0 < 2.1.1。メジャー、マイナー、パッチが同じ場合、プレリリースバージョンを持っている方が通常のバージョンよりも低い優先度です。例：1.0.0-alpha < 1.0.0。同じ、メジャー、マイナー、パッチを持つプレリリースバージョンの優先度の決定は、ドットで区切れた識別子を左から右に、異なるところが見つかるまで比較し決定しなければなりません（MUST）。数値のみで構成される識別子は数値的に比較され、文字列やハイフンを含む識別子はASCIIソート順に辞書的に比較されます。数値的な識別子は常に数値的でない識別子よりも低い優先度です。もし先行する識別子が同じ場合、プレリリースのフィールドが小さいセットよりも大きいセットのほうが高い優先度です。例：1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-beta.2 < 1.0.0-beta.11 < 1.0.0-rc.1 < 1.0.0。
-- - -
+
+---
+
 ## Backus–Naur Form Grammar for Valid SemVer Versions
 ```
 <valid semver> ::= <version core>
@@ -194,7 +225,9 @@ Example: 1.0.0-alpha < 1.0.0-alpha.1 < 1.0.0-alpha.beta < 1.0.0-beta < 1.0.0-bet
            | "y" | "z"
 
 ```
-- - -
+
+---
+
 ## Why Use Semantic Versioning?
 This is not a new or revolutionary idea. In fact, you probably do something close to this already. The problem is that “close” isn’t good enough. Without compliance to some sort of formal specification, version numbers are essentially useless for dependency management. By giving a name and clear definition to the above ideas, it becomes easy to communicate your intentions to the users of your software. Once these intentions are clear, flexible (but not too flexible) dependency specifications can finally be made.
 
@@ -203,7 +236,9 @@ A simple example will demonstrate how Semantic Versioning can make dependency he
 As a responsible developer you will, of course, want to verify that any package upgrades function as advertised. The real world is a messy place; there’s nothing we can do about that but be vigilant. What you can do is let Semantic Versioning provide you with a sane way to release and upgrade packages without having to roll new versions of dependent packages, saving you time and hassle.
 
 If all of this sounds desirable, all you need to do to start using Semantic Versioning is to declare that you are doing so and then follow the rules. Link to this website from your README so others know the rules and can benefit from them.
-- - -
+
+---
+
 这并不是一个新的或者革命性的想法。实际上，你可能已经在做一些近似的事情了。问题在于只是“近似”还不够。如果没有某个正式的规范可循，版本号对于依赖的管理并无实质意义。将上述的想法命名并给予清楚的定义，让你对软件使用者传达意向变得容易。一旦这些意向变得清楚，弹性（但又不会太弹性）的依赖规范就能达成。
 
 举个简单的例子就可以展示语义化的版本控制如何让依赖地狱成为过去。假设有个名为“救火车”的函式库，它需要另一个名为“梯子”并已经有使用语义化版本控制的套件。当救火车创建时，梯子的版本号为3.1.0。因为救火车使用了一些版本3.1.0 所新增的功能， 你可以放心地指定相依于梯子的版本号大等于3.1.0 但小于4.0.0。这样，当梯子版本3.1.1 和3.2.0 发布时，你可以将直接它们纳入你的套件管理系统，因为它们能与原有相依的软件兼容。
@@ -212,6 +247,8 @@ If all of this sounds desirable, all you need to do to start using Semantic Vers
 
 如果你对此认同，希望立即开始使用语义化版本控制，你只需声明你的函式库正在使用它并遵循这些规则就可以了。请在你的README 文件中保留此页连结，让别人也知道这些规则并从中受益。
 
+---
+
 このアイデアは新しいものでもなければ、革新的なものでもありません。実際、みなさんも似たような取り組みを既におこなっているかもしれません。問題は「似ている」のでは不十分だということです。正式な仕様書による取り決めがなければ、バージョンナンバーは依存性の管理において基本的には無意味です。上記のアイデアに対して名前と正確な定義を与えることよって、あなたの開発するソフトウェアにおいて、あなたの意図がユーザーに対して伝わりやすくなることでしょう。一度、これらの意図を正確にしてしまえば、柔軟な（しかし、柔軟すぎてはいけない）依存性の仕様を作ることができます。
 
 　単純な例として、セマンティック バージョニングがどのように依存性地獄を過去のものとするかについて説明します。「Firetruck」と呼ばれるライブラリについて考えてみましょう。それはセマンティック バージョニングされた「Ladder」というパッケージを必要とします。Firetruckを作成した時、Ladderはバージョン3.1.0でした。Firetruckは、バージョン3.1.0時に導入されたいくつかの機能を使用しているので、Ladderが3.1.0以上4.0.0未満の範囲で安全に依存性を指定できます。Ladderのバージョン3.1.1と3.2.0が利用可能になった時、それらをパッケージ管理に取り込んでリリースすることができ、それらが既存の依存するソフトウェアと互換性があるということは明確です。
@@ -219,7 +256,8 @@ If all of this sounds desirable, all you need to do to start using Semantic Vers
 　賢明な開発者であれば、もちろんパッケージがアップグレードされたのならその機能を使ってみたいと思うはずでしょう。ただ、現実は混沌としていて、我々ができることといったら、慎重になることくらいです。セマンティック バージョニングを実践することで、新しい依存パッケージを巻き込むことなく、まともな方法でリリース、アップグレードすることができ、手間と時間を節約してくれることでしょう。
 
 　もし全面的に同意できると感じたのなら、セマンティック バージョニングを実践していることを宣言し、ルールを守って下さい。それからあなたのREADMEからこのWebサイトにリンクしてください、そうすれば、他の人がこのルールを知り、役立てることができるでしょう。
-- - - 
+
+---
 
 # Naming conventions
 (命名规范 | 命名規則)
@@ -251,6 +289,8 @@ If all of this sounds desirable, all you need to do to start using Semantic Vers
 
 ## Python Style Guide 
 [Python Style Guide](PEP-8-style-guide-for-python-code.md)
+
+---
 
 # Writing Documentation
 ## github如何管理文档
@@ -327,6 +367,7 @@ gollum
 接下就可以在浏览器中访问了 http://localhost:4567/
 
 创建wiki文档可以选择在全部Web界面进行操作，也可以选择在终端命令行进行提交管理markdown文件，在浏览器中进行查看。
+
 
 # Open Source Protocol
 开源协议
