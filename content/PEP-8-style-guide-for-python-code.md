@@ -1,3 +1,8 @@
+---
+layout: page
+title: Style Guide for Python Code
+---
+
 # PEP 8 -- Style Guide for Python Code
 
 > The official home of the Python Programming Language
