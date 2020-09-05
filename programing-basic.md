@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "Semantic Versioning "
+title: "Semantic Versioning"
 ---
 # Semantic Versioning 
 (语义化版本 | セマンティックバージョニング)
