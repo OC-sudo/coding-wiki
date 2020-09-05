@@ -288,7 +288,7 @@ If all of this sounds desirable, all you need to do to start using Semantic Vers
 推荐使用中划线进行连接，CSS 语法本身就使用连字号作为连接（比如 font-family，text-align等）
 
 ## Python Style Guide 
-[Python Style Guide](PEP-8-style-guide-for-python-code.md)
+[Python Style Guide](https://oc-sudo.github.io/coding-wiki//content/PEP-8-style-guide-for-python-code)
 
 ---
 
@@ -545,4 +545,4 @@ This project is maintained by [RichardLitt](https://github.com/RichardLitt).
 * gruntfile.js/gulpfile.js
 
 # Regular Expressions
-* [正则表达式入门](https://oc-sudo.github.io/coding-wiki//content/PEP-8-style-guide-for-python-code/)
+* [正则表达式入门](https://oc-sudo.github.io/coding-wiki//content/re-30min/)
