@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: post
 title: Style Guide for Python Code
 ---
 
